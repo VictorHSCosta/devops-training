@@ -1,0 +1,38 @@
+<% content_for :title, "Todos — organize seu dia" %>
+
+<div class="landing">
+  <section class="landing-hero">
+    <div class="landing-badge">✦ simples · rápido · seu</div>
+    <h1>Organize seu dia,<br><span>uma tarefa por vez</span></h1>
+    <p>
+      O Todos ajuda você a capturar, acompanhar e concluir o que importa —
+      sem complicação, sem ruído.
+    </p>
+    <div class="landing-cta">
+      <% if user_signed_in? %>
+        <%= link_to "Ir para minhas tarefas →", todos_path, class: "btn btn-primary btn-lg" %>
+      <% else %>
+        <%= link_to "Entrar", new_user_session_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to "Criar conta", new_user_registration_path, class: "btn btn-outline btn-lg" %>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="landing-grid">
+    <div class="card feature">
+      <div class="feature-icon">⚡</div>
+      <h2>Rápido</h2>
+      <p>Anote e conclua tarefas em segundos, direto na lista.</p>
+    </div>
+    <div class="card feature">
+      <div class="feature-icon">📈</div>
+      <h2>Progresso visível</h2>
+      <p>Acompanhe sua taxa de conclusão com barra de progresso.</p>
+    </div>
+    <div class="card feature">
+      <div class="feature-icon">🔐</div>
+      <h2>Seguro</h2>
+      <p>Suas tarefas protegidas por login com sessão dedicada.</p>
+    </div>
+  </section>
+</div>

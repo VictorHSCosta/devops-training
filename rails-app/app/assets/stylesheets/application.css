@@ -102,7 +102,7 @@ body {
   letter-spacing: 0.04em;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"], input[type="password"] {
   width: 100%;
   padding: 12px 14px;
   border: 1.5px solid var(--border);
@@ -114,11 +114,23 @@ input[type="text"] {
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px var(--primary-soft);
   background: var(--surface);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--primary);
+  width: 17px;
+  height: 17px;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-style: normal;
+  font-size: 0.8rem;
 }
 
 .check-field {
@@ -473,6 +485,194 @@ input[type="text"]:focus {
 
   .new-todo {
     flex-direction: column;
+  }
+}
+
+/* ---------- Autenticação (Devise) ---------- */
+
+.auth-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0 8px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px 28px;
+  text-align: center;
+}
+
+.auth-logo {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.auth-card h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.auth-card h1, .auth-card form {
+  text-align: left;
+}
+
+.auth-sub {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 22px;
+  text-align: left;
+}
+
+.auth-card form {
+  margin-top: 4px;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.remember {
+  margin-bottom: 20px;
+}
+
+.auth-links {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.auth-links a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+.auth-back {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.auth-back:hover {
+  color: var(--text);
+}
+
+/* ---------- Cabeçalho com logout ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* ---------- Landing ---------- */
+
+.landing {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  animation: slide-in 0.35s ease;
+}
+
+.landing-hero {
+  text-align: center;
+  padding: 40px 0 48px;
+}
+
+.landing-badge {
+  display: inline-block;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.landing-hero h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.landing-hero h1 span {
+  color: var(--primary);
+}
+
+.landing-hero p {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 16px auto 0;
+  font-size: 1.05rem;
+}
+
+.landing-cta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-lg {
+  padding: 14px 32px;
+  font-size: 1.05rem;
+}
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary-soft);
+}
+
+.landing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.feature {
+  text-align: center;
+  padding: 28px 20px;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.feature h2 {
+  font-size: 1.05rem;
+}
+
+.feature p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .landing-hero h1 {
+    font-size: 1.9rem;
   }
 }
 

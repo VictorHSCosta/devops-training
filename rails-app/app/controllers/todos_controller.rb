@@ -1,4 +1,6 @@
 class TodosController < ApplicationController
+  before_action :authenticate_user!
+  # ponytail: todos não são escopados por usuário — adicionar user_id + escopo se multiusuário importar
   before_action :set_todo, only: %i[ show edit update destroy ]
 
   # GET /todos
